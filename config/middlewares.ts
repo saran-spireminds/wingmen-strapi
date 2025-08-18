@@ -4,8 +4,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000'], // allow requests from Next.js
-      headers: '*',
+      origin: process.env.CORS_ORIGIN?.split(',') || ['*'],
     },
   },
   'strapi::poweredBy',
